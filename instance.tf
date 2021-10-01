@@ -110,6 +110,12 @@ resource "aws_lb_listener" "asg_lb_listener" {
   
 }
 
+resource "aws_autoscaling_attachment" "asg_alb_att" {
+    autoscaling_group_name = aws_autoscaling_group.poc_asg.id
+    alb_target_group_arn = aws_alb_target_group.instance_tg.arn
+  
+}
+
 resource "aws_s3_bucket" "storage" {
     bucket = "poc-coalfire-bucket-060892"
     acl = "private"
