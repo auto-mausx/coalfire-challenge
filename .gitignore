@@ -1,0 +1,6 @@
+.terraform
+.terraform.lock.hcl
+poc-key
+poc-key.pub
+terraform.tfstate.backup
+terraform.tfstate
