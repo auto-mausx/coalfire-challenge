@@ -55,9 +55,9 @@ resource "aws_launch_template" "asg_lt" {
     #!bin/bash
     sudo su
     yum -y install httpd
-    echo "<h1> Hello World! </h1>" >> /var/www/html/index.html
-    systemctl enable httpd.service
-    systemctl start httpd.service
+    sudo echo "<h1> Hello World! </h1>" >> /var/www/html/index.html
+    sudo systemctl enable httpd.service
+    sudo systemctl start httpd.service
     
 
     EOF
