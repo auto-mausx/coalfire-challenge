@@ -26,7 +26,7 @@ terraform apply
 
 ## Challenges and Issues
 
-- I believe the routing for the alb may need some tweaking. even though this wasn't part of the challenge, I don't believe it's routing traffic correctly
+- Even though this wasn't techinically part of the challenge, I believe the apache install on the asg instances is not installing correctly, and I ran out of time to troubleshoot. I believe it is an issue with writing the `<h1>` tag to the `/var/www/html/index.html` file. My thoughts are the `sudo su` is not working for the file write for some reason.
 
 ## Resources used
 

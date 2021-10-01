@@ -53,11 +53,12 @@ resource "aws_launch_template" "asg_lt" {
     # Install apache
     user_data = "${base64encode(<<-EOF
     #!bin/bash
-    sudo dnf install httpd
-    sudo systemctl enable httpd.service
-    sudo systemctl start httpd.service
+    sudo su
+    yum -y install httpd
+    echo "<h1> Hello World! </h1>" >> /var/www/html/index.html
+    systemctl enable httpd.service
+    systemctl start httpd.service
     
-    sudo echo "Hello World!" > /var/www/html/index.html
 
     EOF
     )}"
